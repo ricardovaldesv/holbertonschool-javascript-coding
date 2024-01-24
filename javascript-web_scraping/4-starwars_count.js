@@ -4,6 +4,11 @@ const request = require('request');
 const apiUrl = process.argv[2];
 const characterId = 18;
 
+if (!apiUrl) {
+  console.error('Usage: node 4-starwars_count.js <API_URL>');
+  process.exit(1);
+}
+
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error('Error fetching data:', error);
