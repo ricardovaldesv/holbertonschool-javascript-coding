@@ -9,6 +9,10 @@ if (!apiUrl) {
   process.exit(1);
 }
 
+if (apiUrl !== 'https://swapi-api.hbtn.io/api/films/') {
+  console.error('Error: La ruta proporcionada no es válida. Debe ser https://swapi-api.hbtn.io/api/films/');
+  process.exit(1);
+
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error('Error fetching data:', error);
