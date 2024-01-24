@@ -11,8 +11,7 @@ if (!apiUrl) {
 
 request(apiUrl, (error, response, body) => {
   if (error) {
-    console.error('Error fetching data:', error);
-    process.exit(1);
+    console.log(error);
   }
 
   const films = JSON.parse(body).results;
