@@ -10,7 +10,6 @@ if (!apiUrl) {
 }
 
 if (apiUrl !== 'https://swapi-api.hbtn.io/api/films') {
-  console.error('Error');
   process.exit(0);
 }
 
