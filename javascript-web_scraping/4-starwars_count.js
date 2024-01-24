@@ -9,11 +9,6 @@ if (!apiUrl) {
   process.exit(1);
 }
 
-if (apiUrl !== 'https://swapi-api.hbtn.io/api/films') {
-  console.error('Er');
-  process.exit(0);
-}
-
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error('Error fetching data:', error);
