@@ -1,0 +1,11 @@
+__pycache__
+*main*
+node_modules/
+.eslintrc.js
+babel.config.js
+nodesource_setup.sh
+package-lock.json
+package.json
+loripsum
+cisfun
+my_file.txt
