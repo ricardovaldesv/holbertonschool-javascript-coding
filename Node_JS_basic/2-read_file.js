@@ -27,7 +27,7 @@ function countStudents(file) {
       data.push(entry);
     }
 
-    console.log('Number of students:', String(data.length));
+    console.log('Number of students:', data.length);
 
     // a array is created with only the fields
     const dataFields = data.map((data) => data.field);
