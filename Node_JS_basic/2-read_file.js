@@ -38,7 +38,7 @@ function countStudents(file) {
     for (let i = 0; i < uniqueFields.length; i += 1) {
       const fieldCS = data.filter((data) => data.field === uniqueFields[i]);
       const fieldNames = fieldCS.map((data) => data.firstname);
-      console.log(`Number of students in: ${uniqueFields[i]} : ${fieldNames.length}. ${fieldNames.join(', ')}`);
+      console.log(`Number of students in ${uniqueFields[i]}: ${fieldNames.length}. List: ${fieldNames.join(', ')}`);
     }
   } catch (error) {
     throw new Error('Cannot load the database');
