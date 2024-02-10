@@ -10,7 +10,7 @@ const app = http.createServer((req, res) => {
     fs.readFile(process.argv[2], 'utf8', (err, data) => {
       if (err) {
         res.statusCode = 500;
-        res.end('This is the list of our students\nCannot load the database');
+        res.end('Internal Server Error');
         return;
       }
       const lines = data.trim().split('\n');
@@ -35,8 +35,11 @@ const app = http.createServer((req, res) => {
         studentsByField[student.field].push(student);
       });
 
+      // Calculate total number of students
+      const totalStudents = lines.length - 1;
+
       // Generate the response
-      const response = ['This is the list of our students'];
+      const response = [`This is the list of our students\nNumber of students: ${totalStudents}`];
       Object.keys(studentsByField).forEach((field) => {
         response.push(`Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].map((student) => student.firstname).join(', ')}`);
       });
