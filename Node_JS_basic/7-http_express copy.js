@@ -35,8 +35,6 @@ app.get('/students', (req, res) => {
     });
 
     const response = ['This is the list of our students'];
-    const totalStudents = lines.length - 1; // Excluding header line
-    response.push(`Number of students: ${totalStudents}`);
     Object.keys(studentsByField).forEach((field) => {
       response.push(`Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].map((student) => student.firstname).join(', ')}`);
     });
