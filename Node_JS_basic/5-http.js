@@ -37,6 +37,10 @@ const app = http.createServer((req, res) => {
 
       // Generate the response
       const response = ['This is the list of our students'];
+
+      // Add number of students to the response
+      response.splice(1, 0, `Number of students: ${lines.length - 1}`);
+
       Object.keys(studentsByField).forEach((field) => {
         response.push(`Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].map((student) => student.firstname).join(', ')}`);
       });
