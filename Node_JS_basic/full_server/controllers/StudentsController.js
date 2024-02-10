@@ -5,10 +5,11 @@ class StudentsController {
     try {
       const studentsByField = await readDatabase(process.argv[2]);
       const response = ['This is the list of our students'];
-      let totalStudents = 0;
+      // eslint-disable-next-line
+      const totalStudents = 0;
 
       Object.keys(studentsByField).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' })).forEach((field) => {
-        totalStudents += studentsByField[field].length;
+        // totalStudents += studentsByField[field].length;
         response.push(`Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].join(', ')}`);
       });
 
@@ -19,6 +20,7 @@ class StudentsController {
     }
   }
 
+  // eslint-disable-next-line
   static async getAllStudentsByMajor(req, res) {
     const { major } = req.params;
     if (major !== 'CS' && major !== 'SWE') {

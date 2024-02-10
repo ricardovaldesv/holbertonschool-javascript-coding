@@ -11,7 +11,7 @@ async function readDatabase(filePath) {
       const values = line.trim().split(',');
       const field = values[fields.indexOf('field')];
       const firstname = values[fields.indexOf('firstname')];
-      
+
       if (!studentsByField[field]) {
         studentsByField[field] = [];
       }
