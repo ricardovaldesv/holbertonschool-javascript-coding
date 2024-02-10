@@ -39,12 +39,12 @@ const app = http.createServer((req, res) => {
       const totalStudents = lines.length - 1;
 
       // Generate the response
-      let response = `This is the list of our students\nNumber of students: ${totalStudents}\n`;
+      const response = [`This is the list of our students\nNumber of students: ${totalStudents}`];
       Object.keys(studentsByField).forEach((field) => {
-        response += `Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].map((student) => student.firstname).join(', ')}\n`;
+        response.push(`Number of students in ${field}: ${studentsByField[field].length}. List: ${studentsByField[field].map((student) => student.firstname).join(', ')}`);
       });
       res.statusCode = 200;
-      res.end(response);
+      res.end(response.join('\n'));
     });
   } else {
     res.statusCode = 404;
